@@ -20,13 +20,9 @@ namespace queryCar
                 if("0" == InputCatcher)
                 {
 
-
-
                     Console.WriteLine("input a filter field:\n mpg,cylinders,displacement,horsepower,weight,acceleration,modelyear,origin,carname\nand filter word to display cars filtered by");
                     InputCatcher = Console.ReadLine();
                     Inventory myInv = new Inventory();
-                    Console.WriteLine(InputCatcher.Split(" ")[0]);
-                    Console.WriteLine(InputCatcher.Split(" ")[1]);
 
                     IEnumerable<Car> filteredList = myInv.FilterCars(InputCatcher.Split(" ")[1],InputCatcher.Split(" ")[0]);
                     string outPut = "";
@@ -41,7 +37,20 @@ namespace queryCar
 
                 }else if("1" == InputCatcher)
                 {
-                    Console.WriteLine("OWNER CASE");
+                    Console.WriteLine("The Average Mpg:");
+                    Inventory myInv = new Inventory();
+                    myInv.queryAvgMilesPerGallon();
+                    Console.WriteLine("Current Total Cars:");
+                    myInv.getTotal();
+                    Console.WriteLine("unique set of Cylinders");
+                    myInv.CylinderSet();
+
+                    
+
+
+
+
+
                 }else if(InputCatcher == ""){
                     LoopVariable = false;
                 }else

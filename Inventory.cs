@@ -67,10 +67,30 @@ namespace queryCar
 
 
 
-                    
+        public void queryAvgMilesPerGallon(){
+            IEnumerable<decimal> FilteredSelection = 
+            from Car in _carList
+            select Car.mpg;
+            Console.WriteLine(FilteredSelection.Average());
+        }
+        public void getTotal(){
+            Console.WriteLine(_carList.Count());
+        }
+        public void CylinderSet(){
+            IEnumerable<int> FilteredSelection = 
+            from Car in _carList
+            select Car.cylinders;
+            foreach (var item in FilteredSelection.Distinct())
+            {
+                Console.WriteLine(item);
+            }
+            
+
+
+        }
+
                    
         public IEnumerable<Car> FilterCars(string filter , String filterField){
-            Console.WriteLine("in filterCars");
             IEnumerable<Car> FilteredSelection;
 
 
@@ -161,7 +181,7 @@ namespace queryCar
                 {
                     FilteredSelection =
                     from Car in _carList
-                    where Car.carname == filter
+                    where Car.carname.Contains(filter)
                     select Car;
                     return FilteredSelection;
                    
