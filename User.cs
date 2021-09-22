@@ -17,14 +17,7 @@ namespace queryCar
         }
 
 
-        public void FilterCars(){
-
-        }
-
-
-        public void SearchCarsByKeyword(){
-
-        }
+        
 
 
 

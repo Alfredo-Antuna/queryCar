@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 namespace queryCar
 {
 
@@ -7,9 +7,10 @@ namespace queryCar
 
 
     public record Car(
-        int mpg,
+        decimal Price,
+        decimal mpg,
         int cylinders,
-        int displacement,
+        decimal displacement,
         int horsepower,
         int weight,
         decimal acceleration,
